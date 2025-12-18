@@ -2,28 +2,31 @@
 
 ## Live Demo
 
-- Include a link to the live version of the project hosted on Render.
+https://final-project-notes-app.onrender.com/
 
 ## Project Overview
 
-- Briefly describe the project and its purpose.
+"that damn notes app" is an archival website made for users to anonymously post a random note from their notes app. It's intended to be fun, spontaneous, a bit bizarre, and easy to use.
+
+This project thoroughly demonstrates my ability to integrate front-end styling and decisions with back-end data handling and custom API routes, using document-oriented NoSQL databases like MongoDB to store user data, and cloud platforms like Render.com to host this application. 
 
 ## Endpoints
 
-- List all the endpoints of the API in this project with a brief description of what each endpoint does.
+API Endpoints utilized in this application include:
+GET /: This was used to render the main page and retrieve all notes in the database. Query parameters that allow users to search for specific notes by text and filter by category are functional by the utilization of this endpoint as well.
+
+POST /entry: Used to accept any new note entry submitted and send it to the MongoDB database.
 
 ## Technologies Used
 
-- List the technologies and tools used in the project:
-    - **Languages**: HTML, CSS, JavaScript
-    - **Libraries**: (e.g., GSAP for animations)
-    - **Other**: Figma for design, Adobe Illustrator for illustrations, OpenAI for A.I. generated assets, etc.
+    - **Languages**: Handlebars, CSS, JavaScript, JSON
+    - **Libraries**: Express.js, MongoDB, Mongoose
+    - **Other**: Render (deployment), Adobe Illustrator (SVG graphics)
 
 ## Credits
 
-- List any third-party assets used in the project (e.g., sound effects, images, fonts) and provide proper attribution.
-- Acknowledge any resources, tutorials, or references you used to help complete the project.
+All graphic design by me. AI was used as support to help tweak and refine design details in CSS and Handlebars.
 
 ## Future Enhancements
 
-- List any features you would’ve liked to add if given more time
+I honestly would have loved to add more styling to the header, but at the same time I was conflicted. I do think the simplicity of the overall website actually makes it very straight to the point and easy to understand comparatively to if I had made it more artistically complex.
