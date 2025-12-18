@@ -1,2 +1,72 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="header">
+<h1 id="title">that damn notes app.</h1>
+<p>paste anything from your notes app. no context required.</p>
+
+<form action="/entry" method="POST">
+  <label>category:</label>
+  <select name="category" required>
+    <option value="" disabled selected>pick a category</option>
+    <option value="thoughts">thoughts</option>
+    <option value="lists">lists</option>
+    <option value="drafts">drafts</option>
+    <option value="writing">writing</option>
+    <option value="reminders">reminders</option>
+    <option value="quotes">quotes</option>
+    <option value="crazy">crazy</option>
+    <option value="other">other</option>
+  </select>
+
+  <label>note:</label>
+  <textarea
+    name="content"
+    minlength="10"
+    maxlength="5000"
+    placeholder="paste something from your notes app…"
+    required
+  ></textarea>
+
+  <button type="submit">add note</button>
+</form>
+
+<form action="/" method="GET">
+  <input
+    type="text"
+    name="q"
+    placeholder="search notes…"
+    value="{{q}}"
+  />
+
+  <select name="category">
+    <option value="">all categories</option>
+    <option value="thoughts">thoughts</option>
+    <option value="lists">lists</option>
+    <option value="drafts">drafts</option>
+    <option value="writing">writing</option>
+    <option value="reminders">reminders</option>
+    <option value="quotes">quotes</option>
+    <option value="crazy">crazy</option>
+    <option value="other">other</option>
+  </select>
+
+  <button type="submit">apply</button>
+  <a href="/">clear</a>
+</form>
+</div>
+
+<div class="phones">
+  {{#if entries.length}}
+    {{#each entries}}
+      <div class="phone-card">
+        <img src="/images/phone.svg" class="phone-svg" alt="phone">
+
+        <div class="phone-content">
+          <div class="note-meta">#{{this.category}}</div>
+          <div class="note-text">{{this.content}}</div>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>no notes yet.</p>
+  {{/if}}
+</div>
+

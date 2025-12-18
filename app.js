@@ -1,3 +1,8 @@
+require("dotenv").config();
+console.log("MONGO_URL =", process.env.MONGO_URL);
+
+const mongoose = require("mongoose");
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +12,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var app = express();
+
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error", err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
